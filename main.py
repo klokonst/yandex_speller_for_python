@@ -8,6 +8,8 @@ def speller(text: str) -> str:
         url=url
     )
     data = request.json()
+    if len(data) == 0:
+        return text
     word_list = []
     for word in data:
         word_list.append(word.get('s')[0])
